@@ -1,0 +1,15 @@
+{
+  "name": "kiki-courier-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/cli.js",
+    "cost": "node src/cli.js cost",
+    "time": "node src/cli.js time",
+    "test": "node --test"
+  },
+  "author": "",
+  "license": "ISC"
+}
