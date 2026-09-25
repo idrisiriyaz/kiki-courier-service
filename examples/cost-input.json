@@ -1,0 +1,11 @@
+{
+  "baseDeliveryCost": 100,
+  "packageCount": 5,
+  "packages": [
+    { "id": "PKG1", "weight": 5, "distance": 5, "offerCode": "OFR001" },
+    { "id": "PKG2", "weight": 15, "distance": 5, "offerCode": "OFR002" },
+    { "id": "PKG3", "weight": 10, "distance": 100, "offerCode": "OFR003" },
+    { "id": "PKG4", "weight": 10, "distance": 50, "offerCode": "OFR002" },
+    { "id": "PKG5", "weight": 10, "distance": 200, "offerCode": "OFR001" }
+  ]
+}

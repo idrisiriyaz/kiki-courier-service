@@ -1,0 +1,13 @@
+{
+  "packageCount": 5,
+  "vehicleCount": 2,
+  "maxVehicleWeight": 100,
+  "vehicleSpeed": 70,
+  "packages": [
+    { "id": "PKG1", "weight": 50, "distance": 100, "offerCode": "OFR001" },
+    { "id": "PKG2", "weight": 75, "distance": 125, "offerCode": "OFR002" },
+    { "id": "PKG3", "weight": 10, "distance": 175, "offerCode": "OFR003" },
+    { "id": "PKG4", "weight": 60, "distance": 110, "offerCode": "OFR002" },
+    { "id": "PKG5", "weight": 95, "distance": 155, "offerCode": "NA" }
+  ]
+}

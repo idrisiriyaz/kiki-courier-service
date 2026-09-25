@@ -1,3 +1,4 @@
+import { logger } from "../utils/logger.js";
 import { calculateDeliveryTime, calculateRoundTripTime } from "./deliveryTime.js";
   
 function createVehicles(vehicleCount, maxWeight, speed) {
@@ -22,7 +23,7 @@ function findBestVehicle(vehicles, packageData) {
 const eligibleVehicles = getEligibleVehicles(vehicles, packageData);
 
 if (eligibleVehicles.length === 0) throw new Error( `No vehicle can carry package ${packageData.id}` );
-  
+
 const candidates = eligibleVehicles.map(vehicle => ({ vehicle, deliveryTime: getVehicleDeliveryTime(vehicle, packageData) }));
   
 candidates.sort((a, b) => a.deliveryTime !== b.deliveryTime ? a.deliveryTime - b.deliveryTime : a.vehicle.id - b.vehicle.id);
@@ -40,16 +41,28 @@ function estimateDeliveryTimes(packages, vehicleCount, maxWeight,  speed) {
 const vehicles = createVehicles(vehicleCount, maxWeight, speed);
 
 const pendingPackages =[...packages].sort((a, b) =>b.weight - a.weight);
+
   
 const results = new Map();
   
 for (const packageData of pendingPackages) {
 
-    const selected = findBestVehicle(vehicles,packageData);
-  
-    results.set(packageData.id,selected.deliveryTime);
-  
-    updateVehicleAvailability(selected.vehicle,packageData);
+    const selected = findBestVehicle(vehicles, packageData);
+
+    results.set(packageData.id, selected.deliveryTime);
+
+    logger.info("package_assigned", {
+      packageId: packageData.id,
+      vehicleId: selected.vehicle.id,
+      weight: packageData.weight,
+      distance: packageData.distance,
+      deliveryTime: selected.deliveryTime,
+      vehicleAvailableAt: selected.vehicle.availableAt
+    });
+
+    console.log("selected", {packageData,selected});
+
+    updateVehicleAvailability(selected.vehicle, packageData);
 
 }
   

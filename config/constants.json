@@ -1,0 +1,29 @@
+{
+  "costPerKg": 10,
+  "costPerKm": 5,
+  "roundTripMultiplier": 2,
+  "defaultOfferCode": "NA",
+  "offers": {
+    "OFR001": {
+      "discount": 10,
+      "minWeight": 70,
+      "maxWeight": 200,
+      "minDistance": 0,
+      "maxDistance": 200
+    },
+    "OFR002": {
+      "discount": 7,
+      "minWeight": 100,
+      "maxWeight": 250,
+      "minDistance": 50,
+      "maxDistance": 150
+    },
+    "OFR003": {
+      "discount": 5,
+      "minWeight": 10,
+      "maxWeight": 150,
+      "minDistance": 50,
+      "maxDistance": 250
+    }
+  }
+}
