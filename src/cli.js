@@ -113,7 +113,7 @@ function main() {
     }
 
     logger.info("run_completed", { mode, result: output });
-    console.log(JSON.stringify(output, null, 2));
+    console.log(output);
   } catch (error) {
     logger.error("run_failed", { mode, message: error.message });
     console.error(`Error: ${error.message}`);

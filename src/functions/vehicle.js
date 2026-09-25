@@ -60,8 +60,6 @@ for (const packageData of pendingPackages) {
       vehicleAvailableAt: selected.vehicle.availableAt
     });
 
-    console.log("selected", {packageData,selected});
-
     updateVehicleAvailability(selected.vehicle, packageData);
 
 }
